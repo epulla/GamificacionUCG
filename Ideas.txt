@@ -1,0 +1,10 @@
+# Ideas por hacer:
+- Ruleta
+
+# Ideas por terminar:
+- Temporizador con voz automatica
+
+# Ideas por mejorar:
+- Unir con lineas
+
+# Ideas terminadas:

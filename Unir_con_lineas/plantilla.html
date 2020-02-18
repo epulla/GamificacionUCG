@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gamificación</title>
+	
+	<style>
+		body{
+			font-family: 'Courier New', Courier, monospace;
+			font-weight: 900;
+		}
+
+		div{
+			margin: 35 10 35 10;
+		}
+
+		li{
+			margin: 25;
+		}
+
+		.qa_container{
+			display: flex;
+			justify-content: center;
+			font-size: 25px;
+		}
+
+		.easter_egg{
+			visibility: hidden;
+		}
+
+		.tabla_container{
+			display: flex;
+			justify-content: center;
+		}
+
+		table {
+			font-family: 'Courier New', Courier, monospace;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border: 1px solid #dddddd;
+			text-align: center;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+
+		.button_container{
+			display: flex;
+			justify-content: center;
+		}
+
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
+</head>
+<body>
+    <div class="qa_container">
+        <div class="preguntas">
+
+        </div>
+        <div class="respuestas">
+
+        </div>
+	</div>
+	<script>
+		let prob = 0.1
+		function setup(){
+			
+		}
+		function draw(){ // La que se ejecuta en un loop infinito
+			shuffleListElems("preguntas_data",prob/100);
+			shuffleListElems("respuestas_data",prob/100);
+		}
+		function getRandomColor() {
+			var letters = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++) {
+				color += letters[Math.floor(Math.random() * 16)];
+			}
+			return color;
+		}
+		function shuffleArray(array) {
+			for (var i = array.length - 1; i > 0; i--) {
+				var j = Math.floor(Math.random() * (i + 1));
+				var temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+
+		function shuffleListElems(idTable, probability){
+			if(Math.random() < probability){
+				var array = document.getElementById(idTable).innerHTML.split("<li>").join("").split("\t").join("").split("</li>");
+				array = array.slice(0,array.length-1);
+				shuffleArray(array);
+				document.getElementById(idTable).innerHTML = "";
+				for(var i = 0; i<array.length;i++)
+					document.getElementById(idTable).innerHTML += "<li>" + array[i] +"</li>\n"; 
+			}
+		}
+
+		function tryAnswers(){
+			let correct_answers = document.getElementById("easter_egg").innerHTML;
+			console.log(correct_answers);
+			let user_response = "";
+			for(var i = 0; i < 2; i++){
+				user_response += document.getElementById("q"+(i+1).toString()).innerHTML + document.getElementById("a"+(i+1).toString()).value;
+			}
+			/*for(var i = 0; i < correct_answers.split(",").length; i++){
+				user_response += document.getElementById("q"+(i+1).toString()).innerHTML + document.getElementById("a"+(i+1).toString()).innerHTML;
+			}*/
+			
+			console.log(user_response);
+		}
+	</script>
+	<div class="tabla_container" id="id_tabla">
+
+	</div>
+	<div class="button_container">
+		<input type="button" id="button" value="Comprueba tus respuestas" onclick="tryAnswers()">
+	</div>
+	<p1 class="easter_egg" id="easter_egg">1b,2c,3d,4e,5a</p1>
+</body>
+</html>

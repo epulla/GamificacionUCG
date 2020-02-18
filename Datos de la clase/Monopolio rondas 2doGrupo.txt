@@ -1,0 +1,18 @@
+# Ronda 1:
+G6 Infografia
+G8 +10 Mapa Conceptual
+G1 +10 Infografia
+G2 +10 Infografia
+G3 +10 Video en Powtoon
+G9 Infografia
+G5 Video
+G4 Mapa Conceptual
+G10 Mapa Conceptual
+G7 Mapa Conceptual
+
+Terminaron primero:
+G10
+G9
+G4
+
+# Ronda 2:

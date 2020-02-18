@@ -1,0 +1,48 @@
+# Spin wheel (Ruleta):
+## Constructor
+- Posicion X
+- Posicion Y
+- Diametro
+- Elementos
+- Friccion
+## Caracteristicas
+- Arcos
+- Puntero para el arco elegido
+- Friccion
+- Posicion angular
+
+## Comportamientos
+- Gira con cierta velocidad
+
+# Arc (Arco)
+## Constructor
+- Contenido
+- Ángulo
+## Caracteristicas
+- Angulo inicial
+- Angulo final
+- Contenido
+- Color (diferente)
+
+## Comportamientos
+- Ser seleccionado
+
+# Pointer (Puntero)
+## Constructor
+- Color
+- Posicion X
+- Posicion Y
+## Caracteristicas
+- Color
+## Comportamientos
+- Moverse segun la ruleta
+
+# Velocimeter (Velocimetro o calculador de velocidades)
+## Constructor
+- Ruleta
+## Caracteristicas
+- Posicion angular anterior
+- Posicion angular actual
+## Comportamientos
+- Calcular velocidad
+ 
