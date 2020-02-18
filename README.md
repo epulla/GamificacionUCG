@@ -1,2 +1,1 @@
 # GamificacionUCG
-# GamificacionUCG
