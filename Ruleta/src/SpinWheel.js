@@ -3,7 +3,7 @@ class SpinWheel{
         this.posX = posX;
         this.posY = posY;
         this.diameter = diameter;
-        this.pointer = new Pointer();
+        this.pointer = new Pointer(posX,posY);
         this.arcs = []
         this.angleAcum = TWO_PI / elems.length;
         this._initializeElems(elems);
@@ -13,12 +13,14 @@ class SpinWheel{
         this.arcs.forEach(function(value){
             value.show();
         });
+        this.pointer.show();
     }
 
     spin(velocity){
         this.arcs.forEach(function(value){
             value.spin(velocity);
         });
+        //this.pointer.vibrate();
     }
 
     _initializeElems(elemsContent){

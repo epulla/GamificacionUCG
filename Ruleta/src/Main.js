@@ -9,12 +9,13 @@ let maxVelocity = 0.4
 /// Main function for setting up the canvas (no loop)
 function setup(){
     createCanvas(window.innerWidth,window.innerHeight);
-    background(255);
+    
     ruleta = new SpinWheel(width/2, height/2, size, elems);
 }
 
 /// Main function for looping forever the canvas (loop)
 function draw(){
+    background(255);
     ruleta.show();
     ruleta.spin(velocity);
     

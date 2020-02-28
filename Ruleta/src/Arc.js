@@ -30,7 +30,9 @@ class Arc{
     spin(velocity){
         this.initialAngle = this.initialAngle + velocity < TWO_PI ? this.initialAngle + velocity : (this.initialAngle - TWO_PI);
         this.finalAngle = this.finalAngle + velocity < TWO_PI ? this.finalAngle + velocity : (this.finalAngle - TWO_PI);
-        /* Codigo de arriba hace lo mismo que lo comentado, pero limpiando la variable
+        
+        // Codigo de arriba hace lo mismo que lo comentado, pero limpiando la variable
+        /* 
         this.initialAngle += velocity;
         this.finalAngle += velocity;
         */
