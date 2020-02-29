@@ -3,6 +3,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .user-input, .velocity-rate{
+            display: flex;
+            justify-content: center;
+            height: 60px;
+        }
+        
+        .user-input input{
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            font-size: 32px;
+            background-color: #FF0040;
+            animation: button 1s infinite;
+        }
+
+        .velocity-rate{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+
+        @keyframes button {
+            0%{font-size: 28px;}
+            50%{font-size: 32px;}
+            100%{font-size: 28px;}
+        }
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
     <script src="SpinWheel.js"></script>
     <script src="Pointer.js"></script>
@@ -11,6 +39,13 @@
     <script src="Main.js"></script>
 </head>
 <body>
-    <input type="button" value="Gira la rueda!" onclick="spinTheWheel()">
+    <div class="user-input">
+        <input type="button" value="Gira la rueda!" onclick="spinTheWheel()">
+    </div>
+    <div class="velocity-rate">
+        <p>Velocidad: <span id="velocity">0</span>%</p>
+    </div>
+    
+    
 </body>
 </html>

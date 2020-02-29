@@ -5,10 +5,11 @@ class Pointer{
     }
 
     show(){
-        fill(255);
-        stroke(0);
+        fill("#FCFF00");
+        stroke("#676767");
+        strokeWeight(3);
         //this.vibrate();
-        triangle(this._posX(-10), this._posY(0), this._posX(10), this._posY(0), this._posX(0), this._posY(-40));
+        triangle(this._posX(-10), this._posY(20), this._posX(10), this._posY(20), this._posX(0), this._posY(-30));
     }
 
     vibrate(){
